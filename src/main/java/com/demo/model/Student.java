@@ -1,26 +1,41 @@
 package com.demo.model;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class Student {
 	private int id;
 	private String name;
 	private String city;
 	private double percentage;
-	private Address address;
-	
-	
+	private List<Address> addresses;
 
-	public Address getAddress() {
-		return address;
-	}
-
-	public void setAddress(Address address) {
-		this.address = address;
+	// Setter with multiple addresses
+	public void setAddresses(List<Address> addresses) {
+		this.addresses = addresses;
 	}
 
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", name=" + name + ", city=" + city + ", percentage=" + percentage + ", address="
-				+ address + "]";
+		return "Student [id=" + id + ", name=" + name + ", city=" + city + ", percentage=" + percentage + ", addresses="
+				+ addresses + "]";
+	}
+
+	// Setter for Single Reference
+	/*
+	 * private Address address;
+	 * 
+	 * public Address getAddress() { return address; }
+	 * 
+	 * public void setAddress(Address address) { this.address = address; }
+	 * 
+	 * @Override public String toString() { return "Student [id=" + id + ", name=" +
+	 * name + ", city=" + city + ", percentage=" + percentage + ", address=" +
+	 * address + "]"; }
+	 */
+
+	public List<Address> getAddresses() {
+		return addresses;
 	}
 
 	public int getId() {

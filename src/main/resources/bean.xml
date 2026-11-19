@@ -1,15 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
         "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<!-- Setter with Single Reference -->
+<!-- <beans> <bean id="s1" class="com.demo.model.Student"> <property name="address" 
+	ref="a1"></property> </bean> <bean id="a1" class="com.demo.model.Address"> 
+	<property name="line1" value="ganeshApartment"></property> <property name="line2" 
+	value="maheshnagar"></property> <property name="city" value="Nashik"></property> 
+	<property name="state" value="MH"></property> </bean> </beans> -->
+
+
+<!-- Setter with Array of Reference -->
 <beans>
+	<!-- Student bean -->
 	<bean id="s1" class="com.demo.model.Student">
-		<property name="address" ref="a1"></property>
+
+		<property name="id" value="101" />
+		<property name="name" value="Munja" />
+		<property name="city" value="Pune" />
+		<property name="percentage" value="85.5" />
+
+		<!-- Array of Address references -->
+		<property name="addresses">
+			<list>
+				<ref bean="a1" />
+				<ref bean="a2" />
+			</list>
+		</property>
+
 	</bean>
 
+	<!-- Address 1 -->
 	<bean id="a1" class="com.demo.model.Address">
-		<property name="line1" value="ganeshApartment"></property>
-		<property name="line2" value="maheshnagar"></property>
-		<property name="city" value="Nashik"></property>
-		<property name="state" value="MH"></property>
+		<property name="line1" value="ganeshApartment" />
+		<property name="line2" value="maheshnagar" />
+		<property name="city" value="Nashik" />
+		<property name="state" value="MH" />
 	</bean>
+
+	<!-- Address 2 -->
+	<bean id="a2" class="com.demo.model.Address">
+		<property name="line1" value="maheshApartment" />
+		<property name="line2" value="ganeshnagar" />
+		<property name="city" value="Mumbai" />
+		<property name="state" value="MH" />
+	</bean>
+
 </beans>
